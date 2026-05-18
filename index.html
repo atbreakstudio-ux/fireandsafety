@@ -19,6 +19,9 @@
   --light-grey: #F5EDE6;
   --border: rgba(232,87,10,0.15);
   --success: #1D9E75;
+  --gold: #C9A84C;
+  --gold-light: #F0D080;
+  --gold-pale: #FDF8EC;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -75,6 +78,7 @@ body::before {
   align-items: center;
   gap: 10px;
   margin-bottom: 22px;
+  flex-wrap: wrap;
 }
 
 .free-badge {
@@ -114,6 +118,42 @@ body::before {
   text-transform: uppercase;
   padding: 5px 12px;
   border-radius: 100px;
+}
+
+/* ── GOLD PARTNER BADGE ── */
+.gold-partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.18) 0%, rgba(240,208,128,0.12) 100%);
+  border: 1px solid rgba(201,168,76,0.5);
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-partner-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(240,208,128,0.08) 50%, transparent 100%);
+  animation: shimmer 2.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0%{transform:translateX(-100%)}
+  100%{transform:translateX(200%)}
+}
+
+.gold-star {
+  font-size: 11px;
+  line-height: 1;
 }
 
 .header-card h1 {
@@ -487,15 +527,19 @@ textarea {
   margin-bottom: 4px;
 }
 
+/* Gold Partner trust item special styling */
+.trust-item.gold-item .trust-num {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 22px;
+}
+
 .trust-label {
   font-size: 11.5px;
   color: var(--grey);
   line-height: 1.4;
-}
-
-.trust-dividers {
-  display: flex;
-  gap: 20px;
 }
 
 /* ── SUCCESS STATE ── */
@@ -696,16 +740,20 @@ textarea.error {
         100% Free Workshop
       </div>
       <div class="nebosh-badge">NEBOSH Accredited</div>
+      <div class="gold-partner-badge">
+        <span class="gold-star">★</span>
+        Gold Partner
+      </div>
     </div>
 
     <h1>Launch Your Career<br/>in <em>Fire & Safety.</em></h1>
 
-    <p>A 2-day foundation workshop at Inspirit Safety Solutions, Thiruvalla — designed to give you absolute clarity on the HSE field, the certifications that matter, and your personal action plan.</p>
+    <p>A 1-day foundation workshop at Inspirit Safety Solutions, Thiruvalla — designed to give you absolute clarity on the HSE field, the certifications that matter, and your personal action plan.</p>
 
     <div class="event-pills">
       <div class="epill">
         <span class="epill-icon">📅</span>
-        <div><strong>May 11 & 12, 2026</strong></div>
+        <div><strong>May 26, 2026</strong></div>
       </div>
       <div class="epill">
         <span class="epill-icon">📍</span>
@@ -918,7 +966,7 @@ textarea.error {
   <div class="success-card" id="success-card">
     <div class="success-icon">✓</div>
     <h2>You're Registered!</h2>
-    <p>Your seat has been reserved for the Free Fire & Safety Workshop on <strong>May 11 & 12, 2026</strong> at Thiruvalla, Kerala.</p>
+    <p>Your seat has been reserved for the Free Fire & Safety Workshop on <strong>May 26, 2026</strong> at Thiruvalla, Kerala.</p>
     <div class="success-highlight">
       📲 Expect a WhatsApp confirmation within 24 hours.
     </div>
@@ -934,7 +982,7 @@ textarea.error {
       </div>
       <div class="step-row">
         <div class="step-num">3</div>
-        <div class="step-text">Attend both days and receive your official E-Certificate of Participation.</div>
+        <div class="step-text">Attend the workshop and receive your official E-Certificate of Participation.</div>
       </div>
     </div>
   </div>
@@ -946,13 +994,13 @@ textarea.error {
         <div class="trust-num">NEBOSH</div>
         <div class="trust-label">Accredited Institute</div>
       </div>
+      <div class="trust-item gold-item">
+        <div class="trust-num">Gold Partner</div>
+        <div class="trust-label">Certified partnership status</div>
+      </div>
       <div class="trust-item">
         <div class="trust-num">100%</div>
         <div class="trust-label">Free — no hidden fees</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-num">2-Day</div>
-        <div class="trust-label">Structured learning with certificate</div>
       </div>
     </div>
   </div>
